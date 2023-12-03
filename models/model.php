@@ -1,6 +1,6 @@
 <?php
 require_once("product.php"); 
-require_once("modules/db_module.php");
+require_once("db_module");
 
 class Model{
 public function getproductlist(){
