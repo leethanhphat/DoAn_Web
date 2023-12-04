@@ -1,21 +1,22 @@
 <?php
+
 require_once("product.php"); 
-require_once("db_module");
+require_once("modules/db_module.php");
 
 class Model{
 public function getproductlist(){
 $link = null;
 taoKetNoi ($link);
-$result = chayTruyVanTraVeDL($link, "select * from products");
+$result = chayTruyVanTraVeDL($link, "select * from tbl_products");
 $data = array();
 while($rows = mysqli_fetch_assoc($result)){
 $product = new Product(
 $rows["productID"],
-$rows["productName"],
+$rows["product_name"],
 $rows["categoryID"], 
 $rows["price"],
-$rows["stockQuantity"],
-$rows["image"]);
+$rows["stock_quantity"],
+$rows["product_img"]);
 
 array_push($data, $product);
 }
