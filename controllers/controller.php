@@ -10,12 +10,12 @@ class Controller{
     {
         if(!isset($_GET["productid"])){
             $products = $this->model->getproductlist();
-            include "views/productlist.php";
+            include_once("views/home/shopping.php") ;
         }
         else
         {
             $product = $this->model->getProduct($_GET["productid"]); 
-            include "views/viewproduct.php";
+            include "views/home/viewproduct.php";
         }
     }
 }
