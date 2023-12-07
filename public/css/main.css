@@ -1,0 +1,29 @@
+.uppercase {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.link {
+    text-decoration: none;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.nav-header {
+    opacity: 75%
+}
+
+.nav-header:hover {
+    opacity: 100%
+}
+
+.devide-header {
+    border-left: #acacac solid 1px;
+}
+
+.nav-link:hover {
+    background-color: #8d8d8d;
+    color: #fff;
+}

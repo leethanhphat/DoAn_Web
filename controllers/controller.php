@@ -8,14 +8,17 @@ class Controller{
     }
     public function invoke()
     {
-        if(!isset($_GET["productid"])){
-            $products = $this->model->getproductlist();
-            include_once("views/home/shopping.php") ;
+        if(isset($_GET["productid"])){
+            $product = $this->model->getProduct($_GET["productid"]); 
+            include ("views/home/productdetail.php");
+        }else if (isset($_GET["search"])){
+            include("show_item_list.php");
         }
         else
         {
-            $product = $this->model->getProduct($_GET["productid"]); 
-            include "views/home/viewproduct.php";
+
+            $products = $this->model->getproductlist();
+            include_once("views/home/shopping.php") ;
         }
     }
 }

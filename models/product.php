@@ -7,12 +7,12 @@ class Product{
     private $price;
     private $stockQuantity;
     private $image;
-    public function getproductID(){return $this->productID;}
-    public function getproductName(){return $this->productName;}
-    public function getcategoryID(){return $this->categoryID;} 
-    public function getprice(){return $this->price;}
-    public function getstockQuantity(){return $this->stockQuantity;}
-    public function getimage(){return $this->image;}
+    public function getProductID(){return $this->productID;}
+    public function getProductName(){return $this->productName;}
+    public function getCategoryID(){return $this->categoryID;} 
+    public function getPrice(){return $this->price;}
+    public function getStockQuantity(){return $this->stockQuantity;}
+    public function getImage(){return $this->image;}
 
     public function __construct($productID, $productName, $categoryID, $price,$stockQuantity,$image)
     {
