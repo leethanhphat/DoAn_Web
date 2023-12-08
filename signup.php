@@ -1,31 +1,31 @@
-
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+    <?php include_once("views/main/header.php");?>
     <div class="container">
         <h2>Sign Up</h2>
         <form action="modules/signup_module.php" method="POST">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email-input" placeholder="Tài khoản email" name="email" required>
+                <label for="email-input">Tài khoản email</label>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="username-input" placeholder="Tên đăng nhập" name="username" required>
+                <label for="username-input">Tên đăng nhập</label>
             </div>
-            <div class="form-group">
-                <label for="password">Email:</label>
-                <input type="password" class="form-control" id="Email" name="Email" required>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password-input" placeholder="Mật khẩu" name="password" required>
+                <label for="password-input">Mật khẩu</label>
             </div>
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>
+    <?php include_once("views/main/footer.php");?>
 </body>
+
 </html>

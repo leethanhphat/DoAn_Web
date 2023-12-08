@@ -11,7 +11,7 @@
     <main >
         <div class="container shoping-container " style="margin-top: 10px;">
             <div class="row ">
-                <div class="category-list col-3 bg-light ">
+                <div class="category-list col-3  bg-light ">
 
 
                     <div class="list-category">

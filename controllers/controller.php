@@ -1,10 +1,10 @@
 <?php
-require_once("models/model.php");
+require_once("models/product_model.php");
 class Controller{ 
     public $model;
     public function __construct()
     {
-    $this->model = new Model();
+    $this->model = new ProductModel();
     }
     public function invoke()
     {
@@ -16,7 +16,7 @@ class Controller{
         }
         else
         {
-            $products = $this->model->getproductlist();
+            $products = $this->model->getProductList();
             include_once("views/home/shop.php") ;
         }
     }

@@ -1,37 +1,48 @@
-<?php session_start(); ?>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Untitled Document</title>
+    <title>Admin</title>
+    <script src="public/js/admin.js"></script>
 </head>
 
-<body>
-    <?php if (($_SESSION['is_admin']) != 1)
-        header("Location: signup.php");
+<body id="admin-body">
+    <?php include_once("views/main/header.php"); ?>
+    <?php
+    if (($_SESSION['is_admin']) != 1)
+        header("Location: login.php");
     ?>
 
-    <div>
+    <div class="container admin-container">
+        <main class="row main-admin">
+            <div class="menu col-lg-4 col-12">
+                <div class="btn-group-vertical w-100" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+                    <label class="btn btn-outline-secondary uppercase"  for="option1">Account</label>
 
-        <h1>Đây là trang admin!</h1>
-        <h2>Bạn chỉ vào được trang này sau khi đăng nhập!</h2>
+                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                    <label class="btn btn-outline-secondary uppercase"   for="option2">Product</label>
+
+                    <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                    <label class="btn btn-outline-secondary uppercase"  for="option3">Category</label>
+                    
+                    <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                    <label class="btn btn-outline-secondary uppercase"  for="option4">Add Product</label>
+
+                    <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
+                    <label class="btn btn-outline-secondary uppercase" for="option5">Add Category</label>
+                </div>
+
+            </div>
+            <div class="content col-lg-8 col-12" id="content">
+                <?php include("controllers/admin_controller.php");?>
+            </div>
+        </main>
+
     </div>
-    <style>
-        body {
-            font-family: Tahoma, Geneva, sans-serif;
-            font-size: 13px;
-        }
 
-        #menu {
-            margin-bottom: 100px;
-            text-align: right
-        }
 
-        h1,
-        h2 {
-            text-align: center;
-        }
-    </style>
+
 </body>
 
 </html>

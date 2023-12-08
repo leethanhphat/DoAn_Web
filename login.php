@@ -25,12 +25,12 @@
             <div class="col-12 col-lg-6">
                 <form action="modules/login_module.php" method="POST">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" name="email" required>
-                        <label for="floatingInput">Tài khoản email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Tài khoản email" name="email"  required>
+                        <label for="email">Tài khoản email</label>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        <label for="floatingPassword">Mật khẩu</label>
+                        <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required>
+                        <label for="password">Mật khẩu</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -38,7 +38,7 @@
                             Ghi nhớ mật khẩu
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary w">Đăng nhập</button>
+                    <button type="submit" class="btn btn-primary mb-3">Đăng nhập</button>
                 </form>
                 <a href="signup.php"><button class="btn btn-primary w">chưa có tài khoản</button></a>
             </div>

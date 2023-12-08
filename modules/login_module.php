@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password,  $hashPass)) {
             $_SESSION["user_id"] = $row["userID"];
+            $_SESSION["user_name"] =$row["username"];
             $_SESSION["is_admin"] = $row["is_admin"];
     
             if ($row["is_admin"] == "1") {
@@ -27,12 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 header("Location: ../index.php");
             }
-        } else{
-            $email=password_verify($password,  $hashPass);
-            echo $email;
         }
     } else {
-       
+        echo "Tên đăng nhập hoặc mật khẩu không hợp lệ";
     }
 }
 
