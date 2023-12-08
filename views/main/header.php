@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <script src="public/js/search.js"></script>
+    <script src="public/js/cart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <?php if (!isset($_SESSION['user_id'])) {
