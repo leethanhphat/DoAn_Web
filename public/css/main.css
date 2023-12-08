@@ -19,10 +19,6 @@ header {
     opacity: 100%
 }
 
-.devide-header {
-    border-left: #acacac solid 1px;
-}
-
 .nav-link:hover {
     background-color: #8d8d8d;
     color: #fff;

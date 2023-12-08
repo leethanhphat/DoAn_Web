@@ -16,9 +16,8 @@ class Controller{
         }
         else
         {
-
             $products = $this->model->getproductlist();
-            include_once("views/home/shopping.php") ;
+            include_once("views/home/shop.php") ;
         }
     }
 }
