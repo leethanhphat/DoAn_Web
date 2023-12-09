@@ -134,7 +134,7 @@ INSERT INTO `tbl_products` (`productID`, `product_name`, `categoryID`, `price`, 
 (16, 'Thước Baoke 20cm RU2074', 4, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_31214.jpg'),
 (17, 'Vở chấm bi', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_227381.jpg'),
 (18, 'Vở sọc', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8936072916142_1.jpg'),
-(19, 'Vở cún', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935044514348.jpg'),
+(19, 'Vở cún', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935044514348.jpg');
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`userID`, `username`, `password`, `Email`, `is_admin`) VALUES
 (1, 'ADMIN1', '$2y$10$FVMm5KUR21PODKJ8C4q2lOtu1UxxcaXV6vsLCvZhjsa48rKzAoQdW', 'admin1@gmail.com', 1),
-(2, 'SMILE', '$2y$10$L3JKZLPqGGjob104B9nZ2Ol7ULubJvH3PPp7hii1/FZF/DemAXQXq', 'smile@gmail.com', 0),
+(2, 'SMILE', '$2y$10$L3JKZLPqGGjob104B9nZ2Ol7ULubJvH3PPp7hii1/FZF/DemAXQXq', 'smile@gmail.com', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
