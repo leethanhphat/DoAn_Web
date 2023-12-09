@@ -16,8 +16,6 @@ class CartModel
                 $rows["price"],
                 $rows["quantity"],
             );
-            
-
             array_push($data, $cart);
         }
         giaiPhongBoNho($link, $result);

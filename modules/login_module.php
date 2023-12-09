@@ -33,7 +33,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Tên đăng nhập hoặc mật khẩu không hợp lệ";
     }
 }
-
-
-
 ?>

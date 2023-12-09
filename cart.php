@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="wrapper mh-100">
+    <div class="wrapper mh-100 ">
         <?php include_once("views/main/header.php"); ?>
-        <main>
+        <main class="login-container">
             <!-- Layout trang GIO HANG -> THANH TOAN -->
-            <div class="page-title">
+            <div class="page-title ">
                 <div class="page-title-inner flex-row medium-flex-wrap container">
                     <div class="flex-col flex-grow medium-text-center">
                         <nav class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">

@@ -14,19 +14,17 @@
 
                 <script type="javascript" scr="public\js\search.js"></script>
                 <ul class="navbar-nav ms-auto">
-
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link uppercase" href="index.php">Sản phẩm</a>
-                        </li>
-                        <li class="devide-header border-start "></li>
-                        <li class="nav-item">
-                            <a class="nav-link uppercase" href="cart.php">Giỏ hàng</a>
-                        </li>
-                        <li class="devide-header border-start "></li>
-                        <li class="nav-item">
-                            <a class="nav-link uppercase" href="login.php">Đăng nhập</a>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link uppercase" href="index.php">Sản phẩm</a>
+                    </li>
+                    <li class="devide-header border-start "></li>
+                    <li class="nav-item">
+                        <a class="nav-link uppercase" href="cart.php">Giỏ hàng</a>
+                    </li>
+                    <li class="devide-header border-start "></li>
+                    <li class="nav-item">
+                        <a class="nav-link uppercase" href="login.php">Đăng nhập</a>
+                </ul>
             </div>
         </div>
     </nav>
