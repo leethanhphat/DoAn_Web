@@ -13,8 +13,9 @@ class Controller{
             include ("views/home/productdetail.php");
         }else if (isset($_GET["search"])){
             include("show_item_list.php");
-        }
-        else
+        }else if (isset($_GET["categoryid"])){
+            include("show_item_list.php");
+        }else
         {
             $products = $this->model->getProductList();
             include_once("views/home/shop.php") ;

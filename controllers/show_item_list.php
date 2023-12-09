@@ -8,13 +8,13 @@ $model = new ProductModel();
 
 if (isset($_GET["categoryid"])) {
     $categoryid = $_GET["categoryid"];
-    $query = " categoryID = " . $categoryid . " limit " . $from . ", " . NUM_PROD_PER_PAGE;
+    $query = " categoryID = " . $categoryid . "";
     $products = $model->getProductListByQuery($query);
     include('views/home/list_item.php');
 } else if (isset($_GET["search"])) {
     $search_product = $_GET["search"];
     // Cập nhật query cho tìm kiếm sản phẩm
-    $query = "product_name LIKE '%" . $search_product . "%' LIMIT " . $from . ", " . NUM_PROD_PER_PAGE;
+    $query = "product_name LIKE '%" . $search_product . "";
     $products = $model->getProductListByQuery($query);
     include('views/home/list_item.php');
 } else {

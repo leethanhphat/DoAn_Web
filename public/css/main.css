@@ -46,31 +46,13 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 4px 10px 3px rgba(57, 57, 57, 0.2);
-    background-color: rgba(207, 226, 255, 255);
+    box-shadow: 2px 4px 10px 3px rgba(220, 95, 95, 0.2);
+    background-color: #906464;
+    color: #fff
 }
 
 .shoping-container {
     overflow-x: hidden
-}
-
-.btn-add-to-cart {
-    border-color: #1f3e6d;
-    color: #1f3e6d;
-    font-weight: 500;
-}
-
-.btn-add-to-cart:hover {
-    background-color: #577eb9;
-    color: aliceblue;
-}
-
-.btn-buynow {
-    background-color: #555fa0;
-}
-
-.btn-buynow:hover {
-    background-color: #1f3e6d;
 }
 
 #admin-body {
@@ -83,4 +65,17 @@ body {
     padding: 25px;
     background-color: rgb(255, 255, 255);
     min-height: 80vh;
+}
+
+.row-divided {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.btn-buy {
+    height: 45px;
+}
+
+.btn-login-form {
+    min-width: 200px
 }

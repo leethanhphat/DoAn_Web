@@ -10,7 +10,7 @@
     <?php include_once("views/main/header.php"); ?>
     <?php
     if (($_SESSION['is_admin']) != 1)
-        header("Location: login.php");
+        header("Location: index.php");
     ?>
 
     <div class="container admin-container">

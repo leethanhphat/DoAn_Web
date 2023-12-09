@@ -9,7 +9,7 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select * from tbl_products limit " .NUM_PROD_PER_PAGE);
+        $result = chayTruyVanTraVeDL($link, "select * from tbl_products  ");
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
             $product = new Product(

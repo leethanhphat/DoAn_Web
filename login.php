@@ -12,7 +12,7 @@
 
 <body>
     <? session_start(); ?>
-    <?php if (isset($_SESSION['user_id'])) {
+    <?php if(isset($_SESSION["user_id"])) {
         header("Location: index.php");
     }
     ?>
@@ -32,22 +32,29 @@
                         <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required>
                         <label for="password">Mật khẩu</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Ghi nhớ mật khẩu
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-3">Đăng nhập</button>
+
+                    <button type="submit" class="btn btn-login-form col-12 btn-secondary my-3">Đăng nhập</button>
+                    <a href="signup.php" id="signup-link"><button class="btn btn-login-form col-12 btn-outline-secondary">Tạo tài khoản</button></a>  
                 </form>
-                <a href="signup.php"><button class="btn btn-primary w">chưa có tài khoản</button></a>
+
             </div>
-
-
         </div>
 
     </main>
     <?php include_once("views/main/footer.php") ?>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const signupButton = document.getElementById('signup-link');
+
+        // Ngăn chặn hành vi mặc định khi nhấn vào button "Tạo tài khoản"
+        signupButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ a
+            // Thực hiện các hành động khác ở đây nếu cần
+            // Ví dụ: chuyển hướng đến trang tạo tài khoản bằng JavaScript
+            window.location.href = 'signup.php'; // Đổi đường dẫn tới trang tạo tài khoản
+        });
+    });
+    </script>
 </body>
 
 </html>

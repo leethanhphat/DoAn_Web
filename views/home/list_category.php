@@ -1,7 +1,9 @@
 <?php
-    echo '<div class="list-group">
+    echo '<div class="btn-group-vertical w-100" role="group" aria-label="Basic radio toggle button group">
     ';
     foreach ($categories as $category) {
-        echo '<a class="link" href="index.php?categoryid='.$category->getCategoryID().'"><button type="button" class="list-group-item list-group-item-action uppercase">'.$category->getCategoryName().'</button></a>';
+        echo '    <input type="radio" class="btn-check category-check" name="category-options" id="'.$category->getCategoryID().'" autocomplete="off">
+        <label class="btn btn-outline-secondary uppercase"  for="'.$category->getCategoryID().'">'.$category->getCategoryName().'</label>';
+
     }
     echo '</div>'; 

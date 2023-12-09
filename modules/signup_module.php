@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username_input = $_POST["username-input"];
     $password_input = $_POST["password-input"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $Email = $_POST["Email"];
+    $Email = $_POST["email-input"];
 
     // Step 4: Check if the username already exists in the database
     $sql = "SELECT * FROM tbl_users WHERE Email = '$Email'";

@@ -14,7 +14,7 @@
                 <div class="category-list col-3  bg-light ">
 
 
-                    <div class="list-category">
+                    <div class="list-category pt-1">
                         <?php include_once("controllers/show_category.php") ?>
                     </div>
                 </div>

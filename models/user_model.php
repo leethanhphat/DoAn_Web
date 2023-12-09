@@ -9,7 +9,7 @@ class userModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select * from tbl_users limit " .NUM_PROD_PER_PAGE);
+        $result = chayTruyVanTraVeDL($link, "select * from tbl_users ");
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
             $user = new user(

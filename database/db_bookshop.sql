@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:4306
--- Thời gian đã tạo: Th12 08, 2023 lúc 03:22 PM
+-- Thời gian đã tạo: Th12 09, 2023 lúc 02:04 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -17,9 +17,35 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- Cơ sở dữ liệu: `db_bookshop`
+--
+CREATE DATABASE IF NOT EXISTS `db_bookshop` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `db_bookshop`;
 --
 -- Cơ sở dữ liệu: `db_bookshop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_carts`
+--
+
+CREATE TABLE `tbl_carts` (
+  `cart_id` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `productID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_carts`
+--
+
+INSERT INTO `tbl_carts` (`cart_id`, `userID`, `productID`, `quantity`) VALUES
+(1, 1, 2, 10),
+(2, 1, 3, 1),
+(3, 1, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -80,7 +106,7 @@ CREATE TABLE `tbl_products` (
   `productID` int(11) NOT NULL,
   `product_name` varchar(100) DEFAULT NULL,
   `categoryID` int(11) DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
+  `price` int(10) DEFAULT NULL,
   `stock_quantity` int(11) DEFAULT NULL,
   `product_img` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -90,27 +116,25 @@ CREATE TABLE `tbl_products` (
 --
 
 INSERT INTO `tbl_products` (`productID`, `product_name`, `categoryID`, `price`, `stock_quantity`, `product_img`) VALUES
-(1, 'Đắc Nhân Tâm', 1, 65.00, 100, 'https://cdn0.fahasa.com/media/catalog/product/d/n/dntttttuntitled_1.jpg'),
-(2, 'Nhà Giả Kim', 1, 70.00, 50, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg'),
-(3, 'Muôn Kiếp Nhân Sinh tập 2', 1, 150.00, 100, 'https://cdn0.fahasa.com/media/catalog/product/m/u/muonkiepnhansinh2_bia-01.jpg'),
-(4, 'Muôn Kiếp Nhân Sinh', 1, 68.00, 30, 'https://cdn0.fahasa.com/media/catalog/product/m/u/muonkiepnhansinh_1.jpg'),
-(5, 'Harry Potter Và Hòn Đá Phù Thuỷ - tập 1', 1, 65.00, 100, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974179672.jpg'),
-(6, 'Harry Potter  Và Phòng Chứa Bí Mật - tập 2', 1, 65.00, 100, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974182290.jpg'),
-(7, 'Bút hồng', 2, 15.00, 1000, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10616.jpg'),
-(8, 'Bút xanh', 2, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10615.jpg'),
-(9, 'Bút xám', 2, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10607.jpg'),
-(10, 'Bút tím', 2, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10600.jpg'),
-(11, 'Bút chì gỗ', 3, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_244718_1_1064.jpg'),
-(12, 'Bút chì bấm - màu xanh', 3, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/3/9/3900000150743.jpg'),
-(13, 'Bút chì bấm - màu hồng', 3, 15.00, 500, 'https://cdn0.fahasa.com/media/catalog/product/3/9/3900000150583.jpg'),
-(14, 'Bộ thước Maped', 4, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/3/1/3154142428158_2.jpg'),
-(15, 'Thước Dẻo SR-023 - Hồng', 4, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_50806.jpg'),
-(16, 'Thước Baoke 20cm RU2074', 4, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_31214.jpg'),
-(17, 'Vở chấm bi', 5, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_227381.jpg'),
-(18, 'Vở sọc', 5, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8936072916142_1.jpg'),
-(19, 'Vở cún', 5, 25.00, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935044514348.jpg'),
-(38, 'Sách', 1, 12.00, 12, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_118984_thanh_ly.jpg'),
-(39, 'Sách', 1, 12.00, 12, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_118984_thanh_ly.jpg');
+(1, 'Đắc Nhân Tâm', 1, 65, 100, 'https://cdn0.fahasa.com/media/catalog/product/d/n/dntttttuntitled_1.jpg'),
+(2, 'Nhà Giả Kim', 1, 70, 50, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg'),
+(3, 'Muôn Kiếp Nhân Sinh tập 2', 1, 150, 100, 'https://cdn0.fahasa.com/media/catalog/product/m/u/muonkiepnhansinh2_bia-01.jpg'),
+(4, 'Muôn Kiếp Nhân Sinh', 1, 68, 30, 'https://cdn0.fahasa.com/media/catalog/product/m/u/muonkiepnhansinh_1.jpg'),
+(5, 'Harry Potter Và Hòn Đá Phù Thuỷ - tập 1', 1, 65, 100, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974179672.jpg'),
+(6, 'Harry Potter  Và Phòng Chứa Bí Mật - tập 2', 1, 65, 100, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974182290.jpg'),
+(7, 'Bút hồng', 2, 15, 1000, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10616.jpg'),
+(8, 'Bút xanh', 2, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10615.jpg'),
+(9, 'Bút xám', 2, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10607.jpg'),
+(10, 'Bút tím', 2, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_10600.jpg'),
+(11, 'Bút chì gỗ', 3, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_244718_1_1064.jpg'),
+(12, 'Bút chì bấm - màu xanh', 3, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/3/9/3900000150743.jpg'),
+(13, 'Bút chì bấm - màu hồng', 3, 15, 500, 'https://cdn0.fahasa.com/media/catalog/product/3/9/3900000150583.jpg'),
+(14, 'Bộ thước Maped', 4, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/3/1/3154142428158_2.jpg'),
+(15, 'Thước Dẻo SR-023 - Hồng', 4, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_50806.jpg'),
+(16, 'Thước Baoke 20cm RU2074', 4, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_31214.jpg'),
+(17, 'Vở chấm bi', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/i/m/image_227381.jpg'),
+(18, 'Vở sọc', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8936072916142_1.jpg'),
+(19, 'Vở cún', 5, 25, 450, 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935044514348.jpg'),
 
 -- --------------------------------------------------------
 
@@ -132,12 +156,21 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`userID`, `username`, `password`, `Email`, `is_admin`) VALUES
 (1, 'ADMIN1', '$2y$10$FVMm5KUR21PODKJ8C4q2lOtu1UxxcaXV6vsLCvZhjsa48rKzAoQdW', 'admin1@gmail.com', 1),
-(14, 'SMILE', '$2y$10$L3JKZLPqGGjob104B9nZ2Ol7ULubJvH3PPp7hii1/FZF/DemAXQXq', 'smile@gmail.com', 0),
-(18, '', '$2y$10$9RK9R4r/nrYgW4MwQ4aPF.wj.fXRrFDUrX5/SMuEkpn8oE2CzkG8e', '123@gmail.com', 0);
+(2, 'SMILE', '$2y$10$L3JKZLPqGGjob104B9nZ2Ol7ULubJvH3PPp7hii1/FZF/DemAXQXq', 'smile@gmail.com', 0),
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `tbl_carts`
+--
+ALTER TABLE `tbl_carts`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD UNIQUE KEY `userID_3` (`userID`,`productID`),
+  ADD KEY `userID_2` (`userID`),
+  ADD KEY `productID` (`productID`),
+  ADD KEY `userID` (`userID`) USING BTREE;
 
 --
 -- Chỉ mục cho bảng `tbl_categories`
@@ -178,6 +211,12 @@ ALTER TABLE `tbl_users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_carts`
+--
+ALTER TABLE `tbl_carts`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_categories`
 --
 ALTER TABLE `tbl_categories`
@@ -210,6 +249,13 @@ ALTER TABLE `tbl_users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `tbl_carts`
+--
+ALTER TABLE `tbl_carts`
+  ADD CONSTRAINT `FR_KEY_PRODUCTID` FOREIGN KEY (`productID`) REFERENCES `tbl_products` (`productID`),
+  ADD CONSTRAINT `FR_KEY_USERID` FOREIGN KEY (`userID`) REFERENCES `tbl_users` (`userID`);
 
 --
 -- Các ràng buộc cho bảng `tbl_orderdetails`

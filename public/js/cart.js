@@ -53,7 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error:', error);
             });
     }
-
-
-
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const checkoutButton = document.querySelector('.btn-buy');
+
+//     checkoutButton.addEventListener('click', function() {
+//         // Gửi yêu cầu AJAX để thực hiện thanh toán và xóa giỏ hàng
+//         buy();
+//     });
+
+//     function buy() {
+//         fetch('modules/buy_module.php', {
+//                 method: 'GET',
+//             })
+//             .then(response => response.text())
+//             .then(data => {
+//                 console.log(data); // Hiển thị thông báo hoặc xử lý dữ liệu trả về từ server
+//             })
+//             .catch(error => {
+//                 console.error('Error:', error);
+//             });
+//     }
+// });

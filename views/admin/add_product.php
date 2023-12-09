@@ -27,5 +27,5 @@
         <span class="input-group-text" id="img-input">Image</span>
         <input type="url" class="form-control" name = "img-input" id="img-input" aria-label="Sizing example input" aria-describedby="img-input" required>
     </div>
-    <button type="submit" class="btn btn-primary">Thêm sản phẩm mới</button>
+    <button type="submit" class="btn btn-secondary">Thêm sản phẩm mới</button>
 </form>
