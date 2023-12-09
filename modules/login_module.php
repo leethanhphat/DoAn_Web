@@ -13,24 +13,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = null;
     taoKetNoi($link);
     $result = chayTruyVanTraVeDL($link, $sql);
-
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $hashPass=$row["password"];
-
         if (password_verify($password,  $hashPass)) {
             $_SESSION["user_id"] = $row["userID"];
             $_SESSION["user_name"] =$row["username"];
             $_SESSION["is_admin"] = $row["is_admin"];
-    
             if ($row["is_admin"] == "1") {
                 header("Location: ../admin.php");
             } else {
                 header("Location: ../index.php");
             }
-        }
+        }else {
+            echo  "Mật khẩu không hợp lệ    ";}
     } else {
-        echo "Tên đăng nhập hoặc mật khẩu không hợp lệ";
+        echo "Tên đăng nhập không hợp lệ";
     }
 }
 ?>

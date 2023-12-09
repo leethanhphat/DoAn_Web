@@ -3,15 +3,13 @@ require_once("db_module.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username_input = $_POST["username"];
     $password_input = $_POST["password"];
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($password_input, PASSWORD_DEFAULT);
     $Email = $_POST["email"];
-
     // Step 4: Check if the username already exists in the database
     $sql = "SELECT * FROM tbl_users WHERE Email = '$Email'";
     $link = null;
     taoKetNoi($link);
     $result = chayTruyVanTraVeDL($link, $sql);
-
     if ($result->num_rows > 0) {
         echo "Username already exists";
     } else {
