@@ -1,10 +1,10 @@
 <?php
 require_once("db_module.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username_input = $_POST["username-input"];
-    $password_input = $_POST["password-input"];
+    $username_input = $_POST["username"];
+    $password_input = $_POST["password"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $Email = $_POST["email-input"];
+    $Email = $_POST["email"];
 
     // Step 4: Check if the username already exists in the database
     $sql = "SELECT * FROM tbl_users WHERE Email = '$Email'";
