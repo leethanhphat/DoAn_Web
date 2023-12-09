@@ -1,16 +1,27 @@
 function searchProducts() {
     const search = document.getElementById('search-input').value;
-    const xhr = new XMLHttpRequest();
+    const currentURL = window.location.href;
+    const urlParams = new URLSearchParams(window.location.search);
+    const productIdParam = urlParams.get('productid');
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            const productListDiv = document.getElementById('item-list');
-            productListDiv.innerHTML = xhr.responseText;
-        }
-    };
+    // Kiểm tra xem productIdParam có tồn tại (nghĩa là đang ở trang sản phẩm cụ thể) không
+    if (productIdParam !== null || !currentURL.endsWith('index.php')) {
+        // Nếu đang ở trang sản phẩm cụ thể, chuyển hướng đến trang index.php với tham số tìm kiếm
+        window.location.href = 'temp.php?search=' + search;
+    } else {
+        // Nếu không phải trang sản phẩm cụ thể, thực hiện tìm kiếm trên trang hiện tại
+        const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', `index.php?search=${search}`, true);
-    xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const productListDiv = document.getElementById('item-list');
+                productListDiv.innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.open('GET', `index.php?search=${search}`, true);
+        xhr.send();
+    }
 }
 
 

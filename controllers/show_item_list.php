@@ -14,7 +14,7 @@ if (isset($_GET["categoryid"])) {
 } else if (isset($_GET["search"])) {
     $search_product = $_GET["search"];
     // Cập nhật query cho tìm kiếm sản phẩm
-    $query = "product_name LIKE '%" . $search_product . "";
+    $query = "product_name LIKE '%" . $search_product . "%'";
     $products = $model->getProductListByQuery($query);
     include('views/home/list_item.php');
 } else {

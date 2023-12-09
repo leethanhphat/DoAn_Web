@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="container  gap-2 mt-3">
-                        <button name="productID" type="button" class="col-12 col-lg-3 btn-add-to-cart btn rounded-pill m-2" id="add-to-cart-btn-<?php echo $product->getProductID(); ?>">Thêm vào giỏ</button>
+                        <button name="productID" type="button" class="col-12 col-lg-3 btn-add-to-cart btn btn-secondary rounded-pill m-2" id="add-to-cart-btn-<?php echo $product->getProductID(); ?>">Thêm vào giỏ</button>
 
                         </div>
                         <div id="message"></div>
