@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Phản hồi mạng không được ổn định');
                 }
                 return response.text();
             })
