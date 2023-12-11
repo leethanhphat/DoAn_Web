@@ -19,8 +19,8 @@
                         <label for="email-input">Tài khoản email</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control" id="username-input" placeholder="Tên đăng nhập" name="username" required>
-                        <label for="username-input">Tên đăng nhập</label>
+                        <input type="text" class="form-control" id="username-input" placeholder="Tên đăng nhập " name="username" required>
+                        <label for="username-input">Tên người dùng</label>
                     </div>
                     <div class="form-floating mb-4">
                         <input type="password" class="form-control" id="password-input" placeholder="Mật khẩu" name="password" required>
