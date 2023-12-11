@@ -13,6 +13,7 @@
                 </div>
 
                 <script type="javascript" scr="public\js\search.js"></script>
+                
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link uppercase" href="admin.php" ><?php echo $_SESSION["user_name"]?></a>

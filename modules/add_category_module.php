@@ -12,6 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (chayTruyVanKhongTraVeDL($link, $sql) === TRUE) {
         header("Location: ../admin.php");
     } else {
-        echo "Error: ";
+        echo "Lỗi: ";
     }
 }
